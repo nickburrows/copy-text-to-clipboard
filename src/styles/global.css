@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body.dark {
+  --primary: #111827;
+  --text-main: white;
+}
+
+body.light {
+  --primary: white;
+  --text-main: #111827;
+}
+
+img {
+  margin: 0;
+}
+
+/* @layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url(/fonts/proxima-nova/400-regular.woff) format("woff");
+  }
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 500;
+    src: url(/fonts/proxima-nova/500-medium.woff) format("woff");
+  }
+} */
+
+@layer components {
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    @apply bg-transparent border border-gray-400 rounded m-1;
+  }
+
+  main {
+    @apply min-h-screen;
+  }
+}
