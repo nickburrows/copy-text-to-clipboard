@@ -8,9 +8,14 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 
-import Header from "./header"
-// import "./layout.css"
+// import Header from "./header"
+import TopBar from "./TopBar"
+
+const MainDiv = styled.div`
+  margin-top: 50px;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,37 +29,27 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="theme-dark bg-primary text-text-main top-0">
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`
-        }}
-      >
-        <div className="container mx-auto">
-          <div className="md:flex">
-            <main>{children}</main>
-            <footer
-              className="hidden"
-              style={{
-                marginTop: `2rem`
-              }}
-            >
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="https://www.gatsbyjs.com">Gatsby</a>
-            </footer>
-          </div>
-        </div>
-      </div>
+    <div className="theme-dark bg-primary text-primary top-0">
+      <TopBar siteTitle={data.site.siteMetadata.title || `Hello`} />
+      <MainDiv className="w-full max-w-8xl mx-auto">
+        <main>{children}</main>
+        <footer
+          className="hidden"
+          style={{
+            marginTop: `2rem`,
+          }}
+        >
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        </footer>
+      </MainDiv>
     </div>
   )
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import classNames from "classnames"
 import { BiCopy } from "@react-icons/all-files/bi/BiCopy"
+// import { BiCheckbox } from "@react-icons/all-files/bi/BiCheckbox"
+import { BiCheckDouble } from "@react-icons/all-files/bi/BiCheckDouble"
 
 function ClipboardCopy({ copyText }) {
   const [isCopied, setIsCopied] = useState(false)
@@ -30,23 +32,35 @@ function ClipboardCopy({ copyText }) {
       })
   }
 
-  const inputClass = `text-center max-w-2/3 w-1/2`
+  const inputClass = `text-lg border-none`
 
   return (
-    <div className="w-full inline-block space-x-2 justify-center">
-      <input
-        className={classNames(inputClass, {
-          "text-red-500 line-through": isCopied
-        })}
-        type="text"
-        value={copyText}
-        readOnly
-      />
-      {/* Bind our handler function to the onClick button property */}
-      <button className="inline-flex" onClick={handleCopyClick}>
-        {isCopied ? <span className="text-red-500">Copied!</span> : <BiCopy />}
-      </button>
-    </div>
+    <>
+      <li className="pr-4 py-3 flex items-center justify-between text-sm">
+        <div className="w-0 flex-1 flex items-center">
+          
+          <span className="flex-1 w-0 truncate">
+            <input
+              className={classNames(inputClass, {
+                "text-red-500 line-through": isCopied,
+              })}
+              type="text"
+              value={copyText}
+              readOnly
+            />
+          </span>
+        </div>
+        <div className="ml-2 flex-shrink-0">
+          <button className="font-medium text-lg" onClick={handleCopyClick}>
+            {isCopied ? (
+              <BiCheckDouble className="h-8 w-8 text-green-500" />
+            ) : (
+              <BiCopy className="h-8 w-8"/>
+            )}
+          </button>
+        </div>
+      </li>
+    </>
   )
 }
 

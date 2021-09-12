@@ -1,0 +1,83 @@
+body.dark {
+  --primary: #282c34;
+  --text-main: white;
+  --color-bg-primary: #282c34;
+  --color-bg-secondary: #283141;
+  --color-text-primary: #f7fafc;
+  --color-text-secondary: #e2e8f0;
+  --color-text-accent: #81e6d9;
+}
+
+body.light {
+  --primary: white;
+  --text-main: #111827;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #edf2f7;
+  --color-text-primary: #282c34;
+  --color-text-secondary: #4a5568;
+  --color-text-accent: #2b6cb0;
+}
+
+/* body {
+  --primary-color: ${theme.colors["primary-color"]};
+  --text: ${theme.colors["text"]};
+  --text-alt: ${theme.colors["text-alt"]};
+  --background: ${theme.colors["background"]};
+  --background-alt: ${theme.colors["background-alt"]};
+  --border: ${theme.colors["border"]};
+  --shadow: ${theme.colors["shadow"]};
+  --color-scheme: ${theme.colors["color-scheme"]};
+}
+.dark {
+  --color-bg-primary: #282c34;
+  --color-bg-secondary: #283141;
+  --color-text-primary: #f7fafc;
+  --color-text-secondary: #e2e8f0;
+  --color-text-accent: #81e6d9;
+}
+.light {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #edf2f7;
+  --color-text-primary: #282c34;
+  --color-text-secondary: #4a5568;
+  --color-text-accent: #2b6cb0;
+} */
+
+img {
+  margin: 0;
+}
+
+/* @layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url(/fonts/proxima-nova/400-regular.woff) format("woff");
+  }
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 500;
+    src: url(/fonts/proxima-nova/500-medium.woff) format("woff");
+  }
+} */
+
+@layer components {
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    @apply bg-transparent border border-gray-400 rounded m-1;
+  }
+
+  main {
+    @apply min-h-screen;
+  }
+
+  p {
+    @apply leading-normal mb-6;
+  }
+}

@@ -1,0 +1,14 @@
+.titleLink {
+  display: flex;
+  font-size: 18px;
+  margin-right: 10px;
+  height: 100%;
+  align-items: center;
+  color: white;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+
+  &:hover {
+    color: #d1d5db;
+  }
+}

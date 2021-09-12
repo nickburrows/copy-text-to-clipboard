@@ -2,12 +2,12 @@ const colors = require("tailwindcss/colors")
 const plugin = require("tailwindcss/plugin")
 
 module.exports = {
-  mode: "jit",
+  // mode: "jit",
   purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
   darkMode: "class",
   theme: {
     container: {
-      center: true
+      center: true,
     },
     extend: {
       colors: {
@@ -20,20 +20,30 @@ module.exports = {
         dark: colors.trueGray,
         red: colors.red,
         sky: colors.sky,
-        amber: colors.amber
-      }
-    }
+        amber: colors.amber,
+      },
+      backgroundColor: {
+        primary: "var(--color-bg-primary)",
+        secondary: "var(--color-bg-secondary)",
+      },
+      textColor: {
+        accent: "var(--color-text-accent)",
+        primary: "var(--color-text-primary)",
+        secondary: "var(--color-text-secondary)",
+      },
+    },
   },
   variants: {
     extend: {
       borderColor: ["responsive", "dark", "group-hover", "hover"],
       borderOpacity: ["responsive", "dark", "group-hover", "hover"],
-      backgroundColor: ["responsive", "light", "dark"],
+      backgroundColor: ["responsive", "dark"],
       fill: ["hover", "focus"],
-      stroke: ["hover", "focus"]
-    }
+      stroke: ["hover", "focus"],
+    },
   },
   plugins: [
+    require("@mertasan/tailwindcss-variables"),
     require("@tailwindcss/forms"),
     require("tailwindcss-prefers-color-scheme")(),
     plugin(function ({ addBase, addComponents, theme }) {
@@ -41,29 +51,29 @@ module.exports = {
         ".btn": {
           padding: `${theme("spacing.2")} ${theme("spacing.4")}`,
           borderRadius: theme("borderRadius.md"),
-          fontWeight: theme("fontWeight.600")
+          fontWeight: theme("fontWeight.600"),
         },
         ".btn-blue": {
           backgroundColor: theme("colors.blue.500"),
           color: theme("colors.white"),
           "&:hover": {
-            backgroundColor: theme("colors.blue.600")
-          }
+            backgroundColor: theme("colors.blue.600"),
+          },
         },
-        ".primary": {
+        ".btn-primary": {
           backgroundColor: theme("colors.blue.500"),
           color: theme("colors.white"),
           "&:hover": {
-            backgroundColor: theme("colors.blue.600")
-          }
+            backgroundColor: theme("colors.blue.600"),
+          },
         },
         ".btn-red": {
           backgroundColor: theme("colors.red.500"),
           color: theme("colors.white"),
           "&:hover": {
-            backgroundColor: theme("colors.red.600")
-          }
-        }
+            backgroundColor: theme("colors.red.600"),
+          },
+        },
       }
 
       addComponents(buttons)
@@ -72,8 +82,8 @@ module.exports = {
       addBase({
         h1: { fontSize: theme("fontSize.2xl") },
         h2: { fontSize: theme("fontSize.xl") },
-        h3: { fontSize: theme("fontSize.lg") }
+        h3: { fontSize: theme("fontSize.lg") },
       })
-    })
-  ]
+    }),
+  ],
 }
