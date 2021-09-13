@@ -38,7 +38,7 @@ const Layout = ({ title, children }) => {
       {/* <Header siteTitle={data.site.siteMetadata.title || `Gatsby`} /> */}
       <DarkHeader menuLinks={data.site.siteMetadata.menuLinks} title={title} />
       <StyledMain>
-        <div className="w-full max-w-8xl mx-auto py-6 px-2">
+        <div className="w-full max-w-4xl mx-auto py-6 md:px-2 lg:px-6">
           {children}
           <footer
             className="hidden"

@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 @import "components/main.css";
 @import "components/form.css";
+/* @import "components/tooltip.css"; */
 
 /* @tailwind base;
 @tailwind components;

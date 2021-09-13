@@ -1,10 +1,11 @@
 {
-  "name": "copytexttoclipboard",
+  "name": "copy-text-to-clipboard",
   "private": true,
   "description": "",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "version": "0.1.1",
+  "author": "Nick Lin <nick.github1@gmail.com>",
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
     "@react-icons/all-files": "4.1.0",
