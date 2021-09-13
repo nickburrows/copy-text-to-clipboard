@@ -1,60 +1,32 @@
 import React from "react"
-import { BiCheckbox } from "@react-icons/all-files/bi/BiCheckbox"
+// import { BiCheckbox } from "@react-icons/all-files/bi/BiCheckbox"
 import ClipboardCopy from "./ClipboardCopy"
 
-import { jsonData } from "../data"
+// import { jsonData } from "../data"
+
+const sharingCode = [
+  { id: 1, code: "AOVA2ET9B6KCV" },
+  { id: 2, code: "AOVN6ZYA6AUGN" },
+  { id: 3, code: "AOVXZBQU9PW6N" },
+  { id: 4, code: "AOV67K9NP2D7Z" },
+  { id: 5, code: "AOVWN4C6RCQRY" },
+  { id: 6, code: "AOV5X53CC76GQ" },
+  { id: 7, code: "AOVGWCUGW7C63" },
+  { id: 8, code: "AOVC3RH2DZ9W3" },
+  { id: 9, code: "AOV6NZNPSK6ZX" },
+  { id: 10, code: "AOV55TF246UCZ" },
+  { id: 11, code: "AOVWDUAHYVG7J" },
+]
 
 const ClipBoardExample = () => {
   return (
-    <div className="flex justify-center pt-8 w-full">
-      <div className="px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-        <div className="mt-1 text-sm sm:mt-0 sm:col-span-2">
+    <div className="min-w-0 flex-auto px-4 xl:px-8 pt-4 lg:pt-10">
+      <div className="px-4 py-5 grid grid-flow-col grid-rows-1 auto-cols-auto gap-4">
+        <div className="mt-1 text-sm grid grid-flow-col grid-rows-1 auto-cols-auto gap-2">
           <ul className="border border-gray-200 rounded-md divide-y divide-gray-200">
-            {jsonData.map(({ id, name }) => (
-              <ClipboardCopy copyText={name} id={id} key={id} />
+            {sharingCode.map(({ id, code }) => (
+              <ClipboardCopy copyText={code} id={id} key={id} />
             ))}
-          </ul>
-        </div>
-        <div className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-          <ul className="border border-gray-200 rounded-md divide-y divide-gray-200">
-            <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-              <div className="w-0 flex-1 flex items-center">
-                <BiCheckbox
-                  className="flex-shrink-0 h-5 w-5 text-gray-400"
-                  aria-hidden="true"
-                />
-                <span className="ml-2 flex-1 w-0 truncate">
-                  resume_back_end_developer.pdf
-                </span>
-              </div>
-              <div className="ml-4 flex-shrink-0">
-                <a
-                  href="/"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
-                >
-                  Download
-                </a>
-              </div>
-            </li>
-            <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-              <div className="w-0 flex-1 flex items-center">
-                <BiCheckbox
-                  className="flex-shrink-0 h-5 w-5 text-gray-400"
-                  aria-hidden="true"
-                />
-                <span className="ml-2 flex-1 w-0 truncate">
-                  coverletter_back_end_developer.pdf
-                </span>
-              </div>
-              <div className="ml-4 flex-shrink-0">
-                <a
-                  href="#"
-                  className="font-medium text-indigo-600 hover:text-indigo-500"
-                >
-                  Download
-                </a>
-              </div>
-            </li>
           </ul>
         </div>
       </div>

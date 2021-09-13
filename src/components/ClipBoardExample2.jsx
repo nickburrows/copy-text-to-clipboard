@@ -16,7 +16,7 @@ const ClipBoardExample2 = () => {
     return number.id % 2 === 1
   })
 
-  console.log(oddNumbers)
+  // console.log(oddNumbers)
   return (
     <div className="px-4 py-5 grid grid-rows-1 grid-flow-col gap-4 auto-cols-auto">
       <div className="mt-1 text-sm">

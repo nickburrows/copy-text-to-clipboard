@@ -11,18 +11,23 @@ import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
 // import Header from "./header"
-import TopBar from "./TopBar"
+// import TopBar from "./TopBar"
+import DarkHeader from "./DarkHeader"
 
-const MainDiv = styled.div`
+const StyledMain = styled.main`
   margin-top: 50px;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ title, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
           title
+          menuLinks {
+            name
+            link
+          }
         }
       }
     }
@@ -30,20 +35,23 @@ const Layout = ({ children }) => {
 
   return (
     <div className="theme-dark bg-primary text-primary top-0">
-      <TopBar siteTitle={data.site.siteMetadata.title || `Hello`} />
-      <MainDiv className="w-full max-w-8xl mx-auto">
-        <main>{children}</main>
-        <footer
-          className="hidden"
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </MainDiv>
+      {/* <Header siteTitle={data.site.siteMetadata.title || `Gatsby`} /> */}
+      <DarkHeader menuLinks={data.site.siteMetadata.menuLinks} title={title} />
+      <StyledMain>
+        <div className="w-full max-w-8xl mx-auto py-6 px-6">
+          {children}
+          <footer
+            className="hidden"
+            style={{
+              marginTop: `2rem`,
+            }}
+          >
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.com">Gatsby</a>
+          </footer>
+        </div>
+      </StyledMain>
     </div>
   )
 }

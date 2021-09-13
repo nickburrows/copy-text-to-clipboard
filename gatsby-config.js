@@ -5,10 +5,23 @@ const fullConfig = resolveConfig(tailwindConfig)
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Gatsby`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    titleTemplate: `%s · The Real Hero`,
+    siteUrl: `https://csb-6bc4r.netlify.app/`,
+    menuLinks: [
+      {
+        name: `預約活動`,
+        link: `/`,
+        current: true,
+      },
+      {
+        name: `聖光魔龍`,
+        link: `/event/`,
+        current: false,
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
