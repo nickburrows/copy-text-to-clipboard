@@ -36,7 +36,7 @@ function ClipboardCopy({ copyText }) {
 
   return (
     <>
-      <li className="pr-4 py-3 flex items-center justify-between text-sm">
+      <li className="pr-4 py-2 flex items-center justify-between text-sm">
         <div className="w-0 flex-1 flex items-center">
           <span className="flex-1 w-0 truncate">
             <input

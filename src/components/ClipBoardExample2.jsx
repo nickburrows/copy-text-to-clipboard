@@ -18,7 +18,7 @@ const ClipBoardExample2 = () => {
 
   // console.log(oddNumbers)
   return (
-    <div className="min-w-0 flex-auto xl:px-8 pt-4 lg:pt-10">
+    <div className="max-w-screen-sm min-w-0 flex-auto xl:px-8 pt-4 lg:pt-10">
       <h1 className="text-xl">聖光魔龍 - 領取能量</h1>
       <div className="px-2 py-5 grid grid-rows-1 grid-flow-col gap-2 auto-cols-auto">
         <div className="mt-1 text-sm">
