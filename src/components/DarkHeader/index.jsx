@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Disclosure } from "@headlessui/react"
-import { HiMenu } from "@react-icons/all-files/hi/HiMenu"
-import { HiX } from "@react-icons/all-files/hi/HiX"
+// import { HiMenu } from "@react-icons/all-files/hi/HiMenu"
+// import { HiX } from "@react-icons/all-files/hi/HiX"
 // import ClipboardCopy from "../ClipboardCopy"
 // import { jsonData } from "../data"
 import classNames from "classnames"
@@ -17,7 +17,7 @@ import classNames from "classnames"
 //   return classes.filter(Boolean).join(" ")
 // }
 
-const DarkHeader = ({ title, siteTitle, menuLinks }) => {
+const DarkHeader = ({ location, title, siteTitle, menuLinks }) => {
   const navClass = "px-3 py-2 rounded-md text-sm font-medium"
   const isCurrentClass = "bg-gray-900 text-white"
   const notCurrentClass = "text-gray-300 hover:bg-gray-700 hover:text-white"
@@ -26,6 +26,18 @@ const DarkHeader = ({ title, siteTitle, menuLinks }) => {
   // navLinks.map((item, index) =>
   //   console.log(index + " = " + item.name + " = " + item.link)
   // )
+
+  // const pathName =
+  //   typeof window !== `undefined` ? window.location.pathname : null
+
+  const myObj = menuLinks.filter(obj => obj.name !== title)
+
+  // useEffect(() => {
+  //   if (typeof window !== `undefined`) {
+  //     const myPath = window.location.pathname
+  //     console.log(myPath)
+  //   }
+  // }, [])
 
   return (
     <div id="topNavigate">
@@ -56,10 +68,8 @@ const DarkHeader = ({ title, siteTitle, menuLinks }) => {
                         <Link
                           key={index}
                           to={item.link}
-                          className={classNames(
-                            item.current ? isCurrentClass : notCurrentClass,
-                            navClass
-                          )}
+                          activeClassName={classNames(navClass, isCurrentClass)}
+                          className={classNames(navClass, notCurrentClass)}
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
@@ -71,34 +81,23 @@ const DarkHeader = ({ title, siteTitle, menuLinks }) => {
 
                 <div className="-mr-2 flex md:hidden">
                   {/* Mobile menu button */}
-                  <Disclosure.Button className="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <HiX className="block h-6 w-6" aria-hidden="true" />
-                    ) : (
-                      <HiMenu className="block h-6 w-6" aria-hidden="true" />
-                    )}
-                  </Disclosure.Button>
+                  {myObj.map((obj, index) => (
+                    <Link
+                      key={index}
+                      to={obj.link}
+                      activeClassName={classNames(
+                        mobileNavClass,
+                        isCurrentClass
+                      )}
+                      className={classNames(mobileNavClass, notCurrentClass)}
+                      aria-current={obj.current ? "page" : undefined}
+                    >
+                      {obj.name}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
-            <Disclosure.Panel className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                {menuLinks.map(({ link, name, current }, index) => (
-                  <Link
-                    key={index}
-                    to={link}
-                    className={classNames(
-                      current ? isCurrentClass : notCurrentClass,
-                      mobileNavClass
-                    )}
-                    aria-current={current ? "page" : undefined}
-                  >
-                    {name}
-                  </Link>
-                ))}
-              </div>
-            </Disclosure.Panel>
           </>
         )}
       </Disclosure>

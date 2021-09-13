@@ -32,13 +32,12 @@ function ClipboardCopy({ copyText }) {
       })
   }
 
-  const inputClass = `text-lg border-none`
+  const inputClass = `text-lg border-none ring-0`
 
   return (
     <>
       <li className="pr-4 py-3 flex items-center justify-between text-sm">
         <div className="w-0 flex-1 flex items-center">
-          
           <span className="flex-1 w-0 truncate">
             <input
               className={classNames(inputClass, {
@@ -51,11 +50,11 @@ function ClipboardCopy({ copyText }) {
           </span>
         </div>
         <div className="ml-2 flex-shrink-0">
-          <button className="font-medium text-lg" onClick={handleCopyClick}>
+          <button className="font-medium" onClick={handleCopyClick}>
             {isCopied ? (
-              <BiCheckDouble className="h-8 w-8 text-green-500" />
+              <BiCheckDouble className="h-6 w-6 text-green-500" />
             ) : (
-              <BiCopy className="h-8 w-8"/>
+              <BiCopy className="h-6 w-6" />
             )}
           </button>
         </div>

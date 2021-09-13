@@ -12,13 +12,13 @@ module.exports = {
     siteUrl: `https://awesome-allen-74559f.netlify.app/`,
     menuLinks: [
       {
-        name: `預約活動`,
+        name: `聖光魔龍`,
         link: `/`,
         current: true,
       },
       {
-        name: `聖光魔龍`,
-        link: `/event/`,
+        name: `預約活動`,
+        link: `/event`,
         current: false,
       },
     ],

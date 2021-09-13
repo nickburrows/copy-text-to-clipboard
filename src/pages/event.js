@@ -2,14 +2,14 @@ import React from "react"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ClipBoardExample2 from "../components/ClipBoardExample2"
+import ClipBoardExample from "../components/ClipBoardExample"
 
 const EventPage = () => {
-  const title = "聖光魔龍"
+  const title = "預約活動"
   return (
     <Layout title={title}>
       <Seo title={title} />
-      <ClipBoardExample2 />
+      <ClipBoardExample />
     </Layout>
   )
 }

@@ -9,7 +9,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
-
+import withLocation from "../hooks/withLocation"
 // import Header from "./header"
 // import TopBar from "./TopBar"
 import DarkHeader from "./DarkHeader"
@@ -38,7 +38,7 @@ const Layout = ({ title, children }) => {
       {/* <Header siteTitle={data.site.siteMetadata.title || `Gatsby`} /> */}
       <DarkHeader menuLinks={data.site.siteMetadata.menuLinks} title={title} />
       <StyledMain>
-        <div className="w-full max-w-8xl mx-auto py-6 px-6">
+        <div className="w-full max-w-8xl mx-auto py-6 px-2">
           {children}
           <footer
             className="hidden"
@@ -60,4 +60,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default withLocation(Layout)

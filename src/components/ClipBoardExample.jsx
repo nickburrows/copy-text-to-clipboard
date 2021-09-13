@@ -20,8 +20,9 @@ const sharingCode = [
 
 const ClipBoardExample = () => {
   return (
-    <div className="min-w-0 flex-auto px-4 xl:px-8 pt-4 lg:pt-10">
-      <div className="px-4 py-5 grid grid-flow-col grid-rows-1 auto-cols-auto gap-4">
+    <div className="min-w-0 flex-auto xl:px-8 pt-4 lg:pt-10">
+      <h1 className="text-xl">預約活動 - 分享碼</h1>
+      <div className="px-2 py-5 grid grid-flow-col grid-rows-1 auto-cols-auto gap-2">
         <div className="mt-1 text-sm grid grid-flow-col grid-rows-1 auto-cols-auto gap-2">
           <ul className="border border-gray-200 rounded-md divide-y divide-gray-200">
             {sharingCode.map(({ id, code }) => (
