@@ -16,7 +16,7 @@ function ClipboardCopy({ copyText }) {
   // const [copySuccess, setCopySuccess] = useState("")
 
   // This is the function we wrote earlier
-  const copyTextToClipboard = async text => {
+  const copyTextToClipboard = async (text) => {
     // if ("clipboard" in navigator) {
     // if (navigator.clipboard) {
     //   return await navigator.clipboard.writeText(text)
@@ -44,7 +44,7 @@ function ClipboardCopy({ copyText }) {
           setTooltip(false)
         }, 2000)
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err)
       })
   }
