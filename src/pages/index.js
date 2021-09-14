@@ -10,6 +10,7 @@ const IndexPage = () => {
     <Layout title={title}>
       <Seo title={title} />
       <ClipBoardExample2 />
+      
     </Layout>
   )
 }

@@ -16,7 +16,7 @@ function ClipboardCopy({ copyText }) {
   // const [copySuccess, setCopySuccess] = useState("")
 
   // This is the function we wrote earlier
-  const copyTextToClipboard = async (text) => {
+  const copyTextToClipboard = async text => {
     // if ("clipboard" in navigator) {
     // if (navigator.clipboard) {
     //   return await navigator.clipboard.writeText(text)
@@ -44,7 +44,7 @@ function ClipboardCopy({ copyText }) {
           setTooltip(false)
         }, 2000)
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err)
       })
   }
@@ -67,14 +67,16 @@ function ClipboardCopy({ copyText }) {
           </span>
         </div>
         <div className="ml-2 flex-shrink-0">
-          <span className="tooltip">
-            <button className="font-medium" onClick={handleCopyClick}>
+          <span className="relative flex items-center">
+            <button className="" onClick={handleCopyClick}>
               {isCopied ? (
                 <>
+                  {tooltip && (
+                    <StyledTooltip className="tooltip-message on-left">
+                      {copyText}
+                    </StyledTooltip>
+                  )}
                   <BiCheckDouble className="h-6 w-6 text-green-500" />
-                  <StyledTooltip className="tooltip-message on-top">
-                    {copyText}
-                  </StyledTooltip>
                 </>
               ) : (
                 <BiCopy className="h-6 w-6" />
