@@ -38,19 +38,19 @@ const Layout = ({ title, children }) => {
       {/* <Header siteTitle={data.site.siteMetadata.title || `Gatsby`} /> */}
       <DarkHeader menuLinks={data.site.siteMetadata.menuLinks} title={title} />
       <StyledMain>
-        <div className="w-full max-w-4xl mx-auto py-6 md:px-2 lg:px-6">
+        <div className="w-full max-w-4xl mx-auto py-6 px-4 lg:px-8">
           {children}
-          <footer
-            className="hidden"
-            style={{
-              marginTop: `2rem`,
-            }}
-          >
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.com">Gatsby</a>
-          </footer>
         </div>
+        <footer
+          className="hidden"
+          style={{
+            marginTop: `2rem`,
+          }}
+        >
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        </footer>
       </StyledMain>
     </div>
   )

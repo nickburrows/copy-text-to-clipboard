@@ -49,7 +49,7 @@ function ClipboardCopy({ copyText }) {
       })
   }
 
-  const inputClass = `text-lg border-none ring-0`
+  const inputClass = `text-lg border-none focus:ring-0`
 
   return (
     <>
